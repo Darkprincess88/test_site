@@ -1,0 +1,650 @@
+html
+Копировать
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планета лета — парк развлечений для всей семьи</title>
+    <meta name="description" content="Семейный парк развлечений «Планета лета». Аттракционы для детей и взрослых, аквазона, кафе и зоны отдыха. Купите билеты онлайн и проведите лучший день в году!">
+    
+    <!-- Современная чистая типографика -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS-переменные: палитра и отступы */
+        :root {
+            --color-primary: #FFC93C;
+            --color-secondary: #4FC3F7;
+            --color-bg: #FFFFFF;
+            --color-text-dark: #1F2937;
+            --color-text-medium: #4B5563;
+            --color-border: #E5E7EB;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 3rem;
+            --radius: 12px;
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --max-width: 1200px;
+        }
+
+        /* Базовые стили и плавная прокрутка */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text-dark);
+        }
+
+        body {
+            background-color: var(--color-bg);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background-color: var(--color-primary);
+            color: var(--color-text-dark);
+            font-weight: 600;
+            border-radius: var(--radius);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #E5A822;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-text-medium);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-lg);
+            font-size: 1.125rem;
+        }
+
+        /* Header и навигация */
+        header {
+            background-color: var(--color-bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-dark);
+        }
+
+        .nav-toggle {
+            display: none;
+        }
+
+        .nav-toggle-label {
+            display: none;
+            cursor: pointer;
+        }
+
+        .nav-toggle-label span,
+        .nav-toggle-label span::before,
+        .nav-toggle-label span::after {
+            display: block;
+            background: var(--color-text-dark);
+            height: 2px;
+            width: 25px;
+            border-radius: 2px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-toggle-label span::before,
+        .nav-toggle-label span::after {
+            content: '';
+            position: absolute;
+            left: 0;
+        }
+
+        .nav-toggle-label span::before {
+            top: -8px;
+        }
+
+        .nav-toggle-label span::after {
+            top: 8px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        nav a {
+            font-weight: 500;
+            padding: var(--spacing-xs) 0;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Hero-секция */
+        .hero {
+            background: linear-gradient(135deg, var(--color-secondary), #3498db);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.5s;
+        }
+
+        .hero:hover::before {
+            transform: scale(1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-sm);
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-lg);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Карточки (аттракционы, отзывы) */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .card {
+            background: var(--color-bg);
+            border-radius: var(--radius);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--color-primary);
+        }
+
+        .card h3 {
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-text-dark);
+        }
+
+        .card p {
+            color: var(--color-text-medium);
+            font-size: 0.95rem;
+        }
+
+        .card img {
+            border-radius: var(--radius);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Преимущества */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: var(--color-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+        }
+
+        /* Отзывы */
+        .testimonial {
+            background: #F9FAFB;
+            padding: var(--spacing-md);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--color-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            margin-top: var(--spacing-sm);
+            color: var(--color-text-dark);
+        }
+
+        /* Контакты */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        .contact-info h3 {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: var(--spacing-sm);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-text-dark);
+            color: #FFFFFF;
+            padding: var(--spacing-lg) 0;
+            text-align: center;
+        }
+
+        .footer-links a {
+            color: #FFFFFF;
+            margin: 0 var(--spacing-xs);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Адаптивность Mobile First */
+        @media (min-width: 480px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .nav-toggle-label {
+                display: none;
+            }
+
+            nav ul {
+                display: flex !important;
+                gap: var(--spacing-lg);
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero {
+                padding: 120px 0;
+            }
+
+            .hero h1 {
+                font-size: 5rem;
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+
+        /* Мобильное меню (CSS-хак) */
+        .nav-toggle {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .nav-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--spacing-sm) 0;
+        }
+
+        .nav-toggle:checked ~ .nav-menu {
+            display: flex;
+        }
+
+        @media (min-width: 768px) {
+            .nav-menu {
+                position: static;
+                flex-direction: row;
+                background: none;
+                border: none;
+                padding: 0;
+                display: flex !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner container">
+        <a href="#" class="logo">Планета лета</a>
+        
+        <!-- Мобильный бургер -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+        
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#about">О парке</a></li>
+                <li><a href="#attractions">Аттракционы</a></li>
+                <li><a href="#benefits">Преимущества</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero-секция -->
+    <section class="hero">
+        <div class="container">
+            <h1>Планета лета: где всегда светит солнце</h1>
+            <p>Семейный парк развлечений с головокружительными горками, аквазоной и уютными кафе. Создаем воспоминания, которые греют круглый год.</p>
+            <a href="#contacts" class="btn">Купить билет</a>
+        </div>
+    </section>
+
+    <!-- О парке -->
+    <section id="about" class="section container">
+        <h2 class="section-title">О парке «Планета лета»</h2>
+        <p class="section-subtitle">Мы открыли свои двери в 2018 году и с тех пор стали любимым местом отдыха для тысяч семей. Наша миссия — подарить вам день, полный искреннего смеха и ярких эмоций, в безопасной и чистой среде.</p>
+        <p>Территория парка занимает 15 гектаров зеленого леса. Мы тщательно следим за чистотой, безопасностью каждого аттракциона и качеством сервиса. У нас есть зоны для самых маленьких гостей и экстремальные площадки для подростков и взрослых.</p>
+    </section>
+
+    <!-- Аттракционы -->
+    <section id="attractions" class="section container">
+        <h2 class="section-title">Наши аттракционы</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="https://placehold.co/600x400/FFC93C/1F2937?text=Космическая+пушка" alt="Аттракцион Космическая пушка">
+                <h3>Космическая пушка</h3>
+                <p>Башня свободного падения для самых смелых. Ощутите невесомость на высоте 45 метров.</p>
+            </div>
+            <div class="card">
+                <img src="https://placehold.co/600x400/4FC3F7/FFFFFF?text=Река+джунглей" alt="Аттракцион Река джунглей">
+                <h3>Река джунглей</h3>
+                <p>Спокойный, но захватывающий сплав на надувных кругах по искусственной реке сквозь пещеры.</p>
+            </div>
+            <div class="card">
+                <img src="https://placehold.co/600x400/FFC93C/1F2937?text=Мега+Волна" alt="Аттракцион Мега Волна">
+                <h3>Мега Волна</h3>
+                <p>Семейная карусель с вращением на 360 градусов. Идеально для родителей с детьми.</p>
+            </div>
+            <div class="card">
+                <img src="https://placehold.co/600x400/4FC3F7/FFFFFF?text=Логово+дракона" alt="Аттракцион Логово дракона">
+                <h3>Логово дракона</h3>
+                <p>Американские горки с тремя мертвыми петлями. Скорость до 110 км/ч.</p>
+            </div>
+            <div class="card">
+                <img src="https://placehold.co/600x400/FFC93C/1F2937?text=Пиратский+корабль" alt="Аттракцион Пиратский корабль">
+                <h3>Пиратский корабль</h3>
+                <p>Классический гигантский маятник, который унесет вас к самым облакам.</p>
+            </div>
+            <div class="card">
+                <img src="https://placehold.co/600x400/4FC3F7/FFFFFF?text=Мини+ферма" alt="Аттракцион Мини ферма">
+                <h3>Мини-ферма</h3>
+                <p>Контактный зоопарк для малышей. Можно покормить козочек и погладить кроликов.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section id="benefits" class="section container">
+        <h2 class="section-title">Почему выбирают нас</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="feature-icon">☀️</span>
+                <div>
+                    <strong>Солнечная погода</strong>
+                    <p>Более 250 солнечных дней в году. В случае дождя — крытые павильоны и подогрев бассейнов.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">👨‍👩‍👧‍👦</span>
+                <div>
+                    <strong>Для всей семьи</strong>
+                    <p>Специальные зоны для детей от 3 лет и экстремальные трассы для подростков.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🛡️</span>
+                <div>
+                    <strong>Безопасность</strong>
+                    <p>Ежедневная проверка всех механизмов и датчики на каждом аттракционе.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🍔</span>
+                <div>
+                    <strong>Еда и отдых</strong>
+                    <p>Фуд-корт с домашней кухней, пиццерия и мороженое ручной работы.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🅿️</span>
+                <div>
+                    <strong>Парковка</strong>
+                    <p>Огромная бесплатная парковка всего в 50 метрах от входа.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">📸</span>
+                <div>
+                    <strong>Фотозоны</strong>
+                    <p>Более 20 тематических локаций для идеальных семейных снимков.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="reviews" class="section container">
+        <h2 class="section-title">Говорят гости</h2>
+        <div class="testimonial">
+            <p>«Приехали с двумя детьми (4 и 9 лет). Для каждого нашли занятие по душе. Старший не вылезал из "Логова дракона", а младший кормил кроликов. Чисто, персонал вежливый, еда вкусная. Обязательно вернемся!»</p>
+            <p class="testimonial-author">— Анна К., мама двоих детей</p>
+        </div>
+        <div class="testimonial">
+            <p>«Адреналин на "Космической пушке" — это нечто! Очереди двигаются быстро, браслет на весь день окупается за пару часов. Лучший парк в области, без сомнений.»</p>
+            <p class="testimonial-author">— Михаил С., 24 года</p>
+        </div>
+        <div class="testimonial">
+            <p>«Идеальное место для корпоратива. Арендовать беседку у воды — просто сказка. Дети были заняты аниматорами, а мы смогли спокойно пообщаться. Спасибо за организацию!»</p>
+            <p class="testimonial-author">— ООО "Вектор", отдел маркетинга</p>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts" class="section container">
+        <h2 class="section-title">Приезжайте в гости</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Адрес</h3>
+                <p>г. Москва, ул. Солнечная, д. 1, парк «Планета лета» (5 км от МКАД по Ярославскому шоссе)</p>
+                <h3>Телефон</h3>
+                <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+                <h3>Часы работы</h3>
+                <p>Пн–Пт: 11:00–21:00<br>
+                Сб–Вс: 10:00–22:00</p>
+            </div>
+            <form class="contact-form" action="#" method="post">
+                <h3>Напишите нам</h3>
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Ваш вопрос" rows="4" required></textarea>
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024–2026 Парк развлечений «Планета лета». Все права защищены.</p>
+        <div class="footer-links">
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">ВКонтакте</a>
+            <a href="#">Telegram</a>
+            <a href="#">Дзен</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Минимальный JS для улучшения UX: закрытие мобильного меню при клике на ссылку
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        const navToggle = document.getElementById('nav-toggle');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                // На мобильных закрываем меню после выбора пункта
+                if (window.innerWidth < 768) {
+                    navToggle.checked = false;
+                }
+                // Плавная прокрутка уже задана в CSS (scroll-behavior: smooth)
+            });
+        });
+
+        // Предзагрузка шрифта для устранения сдвига текста (FOUT)
+        if ('fonts' in document) {
+            document.fonts.load('1em Inter').then(() => {
+                document.documentElement.style.opacity = '1';
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

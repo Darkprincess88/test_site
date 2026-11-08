@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планета лета — семейный парк развлечений</title>
+    <meta name="description" content="Планета лета — семейный парк развлечений: аттракционы, весёлые горки, зоны отдыха и незабываемые эмоции для всей семьи. Купите билет онлайн и проведите день ярко!">
+    <meta name="theme-color" content="#FFC93C">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Планета лета">
+    <meta property="og:title" content="Планета лета — семейный парк развлечений">
+    <meta property="og:description" content="Аттракционы, весёлые горки, зоны отдыха и незабываемые эмоции для всей семьи. Купите билет онлайн!">
+    <meta property="og:url" content="https://planetleta.ru/">
+    <meta property="og:image" content="https://placehold.co/1200x630/FFC93C/1F2937.png?text=Planet+Leta">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Планета лета — семейный парк развлечений">
+    <meta name="twitter:description" content="Аттракционы, весёлые горки, зоны отдыха и незабываемые эмоции для всей семьи.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/FFC93C/1F2937.png?text=Planet+Leta">
+
+    <link rel="canonical" href="https://planetleta.ru/">
+
+    <!-- Favicon: inline SVG, без лишнего сетевого запроса -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎡</text></svg>">
+
+    <!-- Предзагрузка внешних ресурсов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://placehold.co">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== HEADER: логотип + навигация + бургер ===== -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#hero" class="logo" aria-label="Планета лета — на главную">
+                <span class="logo-emoji" aria-hidden="true">🎡</span>
+                Планета лета
+            </a>
+
+            <nav class="nav" id="nav" aria-label="Основная навигация">
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="#about">О парке</a></li>
+                    <li><a class="nav-link" href="#attractions">Аттракционы</a></li>
+                    <li><a class="nav-link" href="#features">Преимущества</a></li>
+                    <li><a class="nav-link" href="#reviews">Отзывы</a></li>
+                    <li><a class="nav-link" href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO: заголовок, подзаголовок, CTA ===== -->
+        <section class="hero" id="hero">
+            <span class="hero-blob hero-blob--yellow" aria-hidden="true"></span>
+            <span class="hero-blob hero-blob--blue" aria-hidden="true"></span>
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <span class="hero-badge">☀️ Работаем каждый день с 10:00 до 22:00</span>
+                    <h1 class="hero-title">
+                        Добро пожаловать на <span class="accent">Планету лета</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Семейный парк развлечений, где солнце светит круглый год! Карусели, горки, верёвочный городок и море радости для детей и взрослых.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contacts" class="btn btn-primary">Купить билет</a>
+                        <a href="#attractions" class="btn btn-secondary">Смотреть аттракционы</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="https://placehold.co/600x400/4FC3F7/FFFFFF?text=%D0%9F%D0%BB%D0%B0%D0%BD%D0%B5%D1%82%D0%B0+%D0%BB%D0%B5%D1%82%D0%B0" alt="Яркая карусель и радостные посетители в парке «Планета лета»" width="600" height="400" loading="eager" fetchpriority="high" decoding="async">
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== О ПАРКЕ ===== -->
+        <section class="section" id="about">
+            <div class="container">
+                <h2 class="section-title">О парке</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            «Планета лета» — это уютный семейный парк, где каждый найдёт развлечение по душе.
+                            Мы создали пространство, в котором дети могут бегать, смеяться и исследовать, а взрослые — отдыхать и радоваться вместе с ними.
+                        </p>
+                        <p>
+                            На территории более 30 аттракционов, зоны отдыха с шезлонгами, кафе с мороженым и лимонадами,
+                            а также верёвочный городок для смелых. Всё продумано для комфорта и безопасности гостей.
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <span class="stat-value">30+</span>
+                                <span class="stat-label">аттракционов</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">лет радости</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">50k</span>
+                                <span class="stat-label">гостей в год</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://placehold.co/600x450/FFC93C/1F2937?text=%D0%9D%D0%B0%D1%88+%D0%BF%D0%B0%D1%80%D0%BA" alt="Панорама парка «Планета лета» с зелёными аллеями и аттракционами" width="600" height="450" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== АТТРАКЦИОНЫ ===== -->
+        <section class="section attractions" id="attractions">
+            <div class="container">
+                <h2 class="section-title">Аттракционы</h2>
+                <div class="cards-grid">
+
+                    <article class="card">
+                        <img class="card-img" src="https://placehold.co/600x400/4FC3F7/FFFFFF?text=%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F+%D0%BA%D0%B0%D1%80%D1%83%D1%81%D0%B5%D0%BB%D1%8C" alt="Яркая карусель с лошадками «Солнечная карусель»" width="600" height="400" loading="lazy" decoding="async">
+                        <div class="card-body">
+                            <h3 class="card-title">Солнечная карусель</h3>
+                            <p class="card-text">Классика для самых маленьких: разноцветные лошадки, мягкая музыка и ощущение праздника.</p>
+                            <div class="card-meta">
+                                <span class="tag">0+</span>
+                                <span class="tag tag--blue">2 мин</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img class="card-img" src="https://placehold.co/600x400/FFC93C/1F2937?text=%D0%92%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9+%D0%B2%D0%B8%D1%85%D1%80%D1%8C" alt="Водный аттракцион с горками и брызгами «Водный вихрь»" width="600" height="400" loading="lazy" decoding="async">
+                        <div class="card-body">
+                            <h3 class="card-title">Водный вихрь</h3>
+                            <p class="card-text">Освежающая горка с брызгами и водопадами — идеальна для жаркого дня. Дети в восторге!</p>
+                            <div class="card-meta">
+                                <span class="tag">5+</span>
+                                <span class="tag tag--blue">3 мин</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img class="card-img" src="https://placehold.co/600x400/4FC3F7/FFFFFF?text=%D0%92%D0%B5%D1%80%D1%91%D0%B2%D0%BE%D1%87%D0%BD%D1%8B%D0%B9+%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%BE%D0%BA" alt="Верёвочный городок с переправами и мостиками" width="600" height="400" loading="lazy" decoding="async">
+                        <div class="card-body">
+                            <h3 class="card-title">Верёвочный городок</h3>
+                            <p class="card-text">Преодолейте подвесные мостики, тоннели и переправы — проверьте ловкость и смелость всей семьёй.</p>
+                            <div class="card-meta">
+                                <span class="tag">7+</span>
+                                <span class="tag tag--blue">20 мин</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img class="card-img" src="https://placehold.co/600x400/FFC93C/1F2937?text=%D0%9A%D0%BE%D1%81%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9+%D0%BF%D0%BE%D0%B5%D0%B7%D0%B4" alt="Детский поезд «Космический экспресс» с вагончиками" width="600" height="400" loading="lazy" decoding="async">
+                        <div class="card-body">
+                            <h3 class="card-title">Космический экспресс</h3>
+                            <p class="card-text">Весёлый поезд объезжает весь парк: можно рассмотреть все аттракционы и помахать друзьям.</p>
+                            <div class="card-meta">
+                                <span class="tag">3+</span>
+                                <span class="tag tag--blue">8 мин</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img class="card-img" src="https://placehold.co/600x400/4FC3F7/FFFFFF?text=%D0%91%D0%B0%D1%82%D1%83%D1%82%D0%BD%D1%8B%D0%B9+%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2" alt="Батутный остров с мягкими батутами и сеткой" width="600" height="400" loading="lazy" decoding="async">
+                        <div class="card-body">
+                            <h3 class="card-title">Батутный остров</h3>
+                            <p class="card-text">Прыгайте, кувыркайтесь и заряжайтесь энергией! Безопасные батуты с мягким покрытием.</p>
+                            <div class="card-meta">
+                                <span class="tag">4+</span>
+                                <span class="tag tag--blue">15 мин</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img class="card-img" src="https://placehold.co/600x400/FFC93C/1F2937?text=%D0%9A%D0%BE%D0%BB%D0%B5%D1%81%D0%BE+%D0%BE%D0%B1%D0%BE%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D1%8F" alt="Колесо обозрения с панорамным видом на парк" width="600" height="400" loading="lazy" decoding="async">
+                        <div class="card-body">
+                            <h3 class="card-title">Колесо обозрения</h3>
+                            <p class="card-text">Поднимитесь высоко-высоко и посмотрите на парк с высоты птичьего полёта. Дух захватывает!</p>
+                            <div class="card-meta">
+                                <span class="tag">0+</span>
+                                <span class="tag tag--blue">6 мин</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ПРЕИМУЩЕСТВА ===== -->
+        <section class="section" id="features">
+            <div class="container">
+                <h2 class="section-title">Почему у нас классно</h2>
+                <div class="features-grid">
+
+                    <div class="feature">
+                        <div class="feature-icon" aria-hidden="true">🎢</div>
+                        <div>
+                            <h3>Аттракционы на любой вкус</h3>
+                            <p>От спокойных каруселей до захватывающих горок — для малышей и подростков.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon" aria-hidden="true">🛡️</div>
+                        <div>
+                            <h3>Безопасность превыше всего</h3>
+                            <p>Сертифицированное оборудование, инструкторы и регулярные проверки.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon" aria-hidden="true">🍦</div>
+                        <div>
+                            <h3>Вкусная еда и мороженое</h3>
+                            <p>Кафе с детским меню, лимонады, сладкая вата и множество точек с перекусом.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <div class="feature-icon" aria-hidden="true">🌳</div>
+                        <div>
+                            <h3>Уютная зона отдыха</h3>
+                            <p>Тенистые аллеи, шезлонги и фонтанчики — можно передохнуть между приключениями.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ОТЗЫВЫ ===== -->
+        <section class="section reviews" id="reviews">
+            <div class="container">
+                <h2 class="section-title">Отзывы гостей</h2>
+                <div class="reviews-grid">
+
+                    <article class="review">
+                        <div class="review-stars" role="img" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <p class="review-text">
+                            «Отмечали день рождения дочки в «Планете лета» — дети были счастливы! Аттракционы яркие, персонал приветливый. Обязательно вернёмся!»
+                        </p>
+                        <div class="review-author">
+                            <img class="review-avatar" src="https://placehold.co/44x44/4FC3F7/FFFFFF?text=%D0%90" alt="Аватар Анны" width="44" height="44" loading="lazy" decoding="async">
+                            <div>
+                                <div class="review-name">Анна</div>
+                                <div class="review-role">мама двоих детей</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="review">
+                        <div class="review-stars" role="img" aria-label="Оценка 5 из 5">★★★★★</div>
+                        <p class="review-text">
+                            «Ходим всей семьёй каждые выходные. Особенно нравится верёвочный городок и водный вихрь. Чисто, безопасно и очень весело!»
+                        </p>
+                        <div class="review-author">
+                            <img class="review-avatar" src="https://placehold.co/44x44/FFC93C/1F2937?text=%D0%94" alt="Аватар Дмитрия" width="44" height="44" loading="lazy" decoding="async">
+                            <div>
+                                <div class="review-name">Дмитрий</div>
+                                <div class="review-role">папа-активист</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="review">
+                        <div class="review-stars" role="img" aria-label="Оценка 4 из 5">★★★★☆</div>
+                        <p class="review-text">
+                            «Прекрасное место для семейного отдыха! Немного очередей в выходные, но оно того стоит. Дети в восторге от космического экспресса.»
+                        </p>
+                        <div class="review-author">
+                            <img class="review-avatar" src="https://placehold.co/44x44/4FC3F7/FFFFFF?text=%D0%9C" alt="Аватар Марии" width="44" height="44" loading="lazy" decoding="async">
+                            <div>
+                                <div class="review-name">Мария</div>
+                                <div class="review-role">гостья парка</div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== КОНТАКТЫ ===== -->
+        <section class="section" id="contacts">
+            <div class="container">
+                <h2 class="section-title">Контакты и билеты</h2>
+                <div class="contacts-grid">
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">📍</span>
+                            <div>
+                                <strong>Адрес</strong>
+                                <span>г. Солнечный, ул. Радужная, 15 (вход со стороны парка)</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">📞</span>
+                            <div>
+                                <strong>Телефон</strong>
+                                <a href="tel:+78001234567">+7 (800) 123-45-67</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">🕒</span>
+                            <div>
+                                <strong>Часы работы</strong>
+                                <span>Ежедневно с 10:00 до 22:00 (без выходных)</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon" aria-hidden="true">✉️</span>
+                            <div>
+                                <strong>Почта для связи</strong>
+                                <a href="mailto:hello@planetleta.ru">hello@planetleta.ru</a>
+                            </div>
+                        </div>
+                        <p class="contact-tip">
+                            💡 Совет: покупайте билеты онлайн — быстрее и дешевле!
+                        </p>
+                    </div>
+
+                    <!-- Форма-заглушка для заявки -->
+                    <form class="contact-form" id="ticket-form" action="#" method="post" novalidate>
+                        <h3>Заявка на билеты</h3>
+                        <p>Оставьте контакты — перезвоним и подберём лучший вариант.</p>
+
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" placeholder="Александра" autocomplete="name" required aria-describedby="name-error">
+                            <span class="form-error" id="name-error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67" autocomplete="tel" required aria-describedby="phone-error">
+                            <span class="form-error" id="phone-error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Комментарий</label>
+                            <textarea id="message" name="message" placeholder="Например, день рождения 10 детей в субботу"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary form-submit">Отправить заявку</button>
+                        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#hero" class="logo" aria-label="Планета лета — наверх">
+                        <span class="logo-emoji" aria-hidden="true">🎡</span>
+                        Планета лета
+                    </a>
+                    <p>Семейный парк развлечений, где каждый день — праздник. Приходите за эмоциями!</p>
+                </div>
+
+                <div class="footer-nav">
+                    <h3>Разделы</h3>
+                    <ul>
+                        <li><a href="#about">О парке</a></li>
+                        <li><a href="#attractions">Аттракционы</a></li>
+                        <li><a href="#features">Преимущества</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-nav">
+                    <h3>Мы в соцсетях</h3>
+                    <div class="socials">
+                        <a class="social-link" href="https://vk.com/" aria-label="ВКонтакте">VK</a>
+                        <a class="social-link" href="https://t.me/" aria-label="Telegram">TG</a>
+                        <a class="social-link" href="https://www.instagram.com/" aria-label="Instagram">IG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© <span id="footer-year">2025</span> Парк развлечений «Планета лета». Все права защищены.</span>
+                <span>Сделано с любовью к лету и детям ☀️</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js" defer></script>
+
+</body>
+</html>
